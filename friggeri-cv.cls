@@ -50,12 +50,12 @@
 \RequirePackage[quiet]{fontspec}
 \RequirePackage[math-style=TeX,vargreek-shape=unicode]{unicode-math}
 
-\newfontfamily\bodyfont[]{Liberation Sans}
-\newfontfamily\thinfont[]{Liberation Sans Italic}
-\newfontfamily\headingfont[]{Liberation Sans Bold}
+\newfontfamily\bodyfont[]{Helvetica Neue}
+\newfontfamily\thinfont[]{Helvetica Neue UltraLight}
+\newfontfamily\headingfont[]{Helvetica Neue Condensed Bold}
 
 \defaultfontfeatures{Mapping=tex-text}
-\setmainfont[Mapping=tex-text, Color=textcolor]{Liberation Sans}
+\setmainfont[Mapping=tex-text, Color=textcolor]{Helvetica Neue Light}
 
 %\setmathfont{XITS Math}
 
@@ -186,7 +186,7 @@
   \printfield{title}%
   \newblock%
   \printnames{author}%
-  \par%n
+  \par%
   \newblock%
   {%
     \footnotesize\addfontfeature{Color=lightgray}\itshape%
@@ -307,3 +307,14 @@
 
 \RequirePackage[left=6.1cm,top=2cm,right=1.5cm,bottom=2.5cm,nohead,nofoot]{geometry}
 \RequirePackage{hyperref}
+\hypersetup{
+    colorlinks=false,       
+    linkcolor=red,          
+    citecolor=red,        
+    filecolor=red,      
+    urlcolor = red}
+    
+% A fix for \href{}{} colors not working with fontspec
+\makeatletter
+\def\HyColor@@@@UseColor#1\@nil{\addfontfeatures{Color=#1}}
+\makeatother
